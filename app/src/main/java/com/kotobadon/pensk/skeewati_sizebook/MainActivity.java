@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Serializer serializer;
-    private ArrayList<Person> Persons;
+    private ArrayList<Person> persons;
 
 
     @Override
@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        persons = new ArrayList<Person>();
         serializer = new Serializer();
+
+        
     }
 }

@@ -12,7 +12,7 @@
     tools:context="com.kotobadon.pensk.skeewati_sizebook.MainActivity">
 
     <TextView
-        android:id="@+id/personCount"
+        android:id="@+id/personCountText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/person_count" />
@@ -26,5 +26,12 @@
         android:scrollbars="vertical" >
 
     </ListView>
+
+    <Button
+        android:id="@+id/newPerson"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_person" />
+
 
 </LinearLayout>

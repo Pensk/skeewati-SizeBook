@@ -24,4 +24,14 @@ public class Serializer {
     public void saveToFile(ArrayList<Person> Persons){
 
     }
+
+    public String[] personsToString(ArrayList<Person> persons){
+        //persons.toArray();
+        String[] people = new String[persons.size()];
+        for(int x=0; x<persons.size(); ++x){
+            Person person = persons.get(x);
+            people[x] = person.getName() + "\n " + person.getBustString() + person.getChestString() + person.getWaistString() + person.getInseamString();
+        }
+        return people;
+    }
 }

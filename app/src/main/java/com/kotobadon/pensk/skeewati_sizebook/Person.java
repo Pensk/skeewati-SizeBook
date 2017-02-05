@@ -32,4 +32,46 @@ public class Person {
     public Person(String name){
         this.name = name;
     }
+
+    public String getName() { return this.name; }
+
+    public String getBustString() {
+        if (this.bust > 0) {
+            return "bust: " + this.bust;
+        } else {
+            return "";
+        }
+    }
+
+    public String getChestString() {
+        if (this.chest > 0) {
+            return "chest: " + this.chest;
+        } else {
+            return "";
+        }
+    }
+
+    public String getWaistString() {
+        if (this.waist > 0) {
+            return "waist: " + this.waist;
+        } else {
+            return "";
+        }
+    }
+
+    public String getInseamString() {
+        if (this.inseam > 0) {
+            return "inseam: " + this.inseam;
+        } else {
+            return "";
+        }
+    }
+
+    public void setBust(float bust){
+        this.bust = bust;
+    }
+
+    public void setWaist(float waist) {
+        this.waist = waist;
+    }
 }

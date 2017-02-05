@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         persons = new ArrayList<Person>();
         serializer = new Serializer();
 
-        
+        persons.add(new Person("Boi"));
+        persons.add(new Person("Boi 2"));
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Serializer serializer;
     private ArrayList<Person> persons;
     private ListView personList;
     private TextView personCount;
+    private Button newPerson;
 
 
     @Override
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         personCount = (TextView) findViewById(R.id.personCountText);
 
         persons = new ArrayList<Person>();
-        serializer = new Serializer();
 
 
         Person person1 = new Person("Boi");
@@ -43,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Person p = persons.get(position);
-                Intent intent = new Intent();
+                Intent intent = new Intent(MainActivity.this, PersonViewActivity.class);
+                intent.putExtra("name", p.getName());
+                intent.putExtra("bust", p.getBust());
+                intent.putExtra("chest", p.getChest());
+                intent.putExtra("waist", p.getWaist());
+                intent.putExtra("inseam", p.getInseam());
                 startActivity(intent);
             }
         });
@@ -55,9 +60,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-        //String[] persons = Serializer.loadFromFile();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.person_item, serializer.personsToString(persons));
+                R.layout.person_item, SizeBookApplication.getModel().personsToString());
         personList.setAdapter(adapter);
     }
 }

@@ -2,4 +2,8 @@
     <string name="app_name">skeewati-SizeBook</string>
     <string name="person_count">0</string>
     <string name="new_person">New Entry</string>
+    <string name="title_activity_person_view">PersonViewActivity</string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -35,6 +35,14 @@ public class Person {
 
     public String getName() { return this.name; }
 
+    public float getBust() { return this.bust; }
+
+    public float getChest() { return this.chest; }
+
+    public float getWaist() { return this.waist; }
+
+    public float getInseam() { return this.inseam; }
+
     public String getBustString() {
         if (this.bust > 0) {
             return "bust: " + this.bust;

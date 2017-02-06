@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+//The first activity when loading the app. Lists all the current Person records, and their count.
+//Information is fetched from the controller.
 public class MainActivity extends AppCompatActivity {
     ListView personList;
 
@@ -22,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
         TextView personCount = (TextView) findViewById(R.id.personCountText);
         Button newButton = (Button) findViewById(R.id.newPerson);
 
+        //get a reference to the controller for the data.
         final SizeBookController sizeBookController = SizeBookApplication.getController();
 
         personCount.setText("Records: " + sizeBookController.getCount());
 
+        //Set the CurrentID when an item is selected (-1 for new user, position in the list for current ones)
         personList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

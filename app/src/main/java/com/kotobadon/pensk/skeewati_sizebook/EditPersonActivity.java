@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//Responsible for editing Person data for new and already created records.
 public class EditPersonActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +15,7 @@ public class EditPersonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_person);
 
+        //Load the elements in the activity for editing
         Button backButton = (Button) findViewById(R.id.backButton);
         Button submitButton = (Button) findViewById(R.id.submitButton);
         final TextView name = (TextView) findViewById(R.id.nameEdit);
@@ -26,6 +28,7 @@ public class EditPersonActivity extends AppCompatActivity {
         final TextView inseam = (TextView) findViewById(R.id.inseamEdit);
         final TextView comment = (TextView) findViewById(R.id.commentEdit);
 
+        //If the ID of the current user is not -1 (new user), load the current information for the Person into the fields.
         System.out.println(SizeBookApplication.getController().getCurrentId());
         if(SizeBookApplication.getController().getCurrentId() > -1){
             Person p = SizeBookApplication.getController().getCurrentPerson();
@@ -49,10 +52,11 @@ public class EditPersonActivity extends AppCompatActivity {
             }
         });
 
+        //First, check that the name field is not empty.
+        //Then, Depending on whether the current user exists or not editPerson or addPerson with the entered data.
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(" WAO WAO (" + name.getText() +")");
                 if (name.getText().length() > 0) {
                     if(SizeBookApplication.getController().getCurrentId() > -1) {
                         SizeBookApplication.getController().editPerson(

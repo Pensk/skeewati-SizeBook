@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//Show the data for a single Person record.
 public class PersonViewActivity extends AppCompatActivity {
 
     @Override
@@ -17,6 +18,7 @@ public class PersonViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_view);
 
+        //Get the current person using the ID from the controller.
         Person p = SizeBookApplication.getController().getCurrentPerson();
 
         TextView name = (TextView) findViewById(R.id.personName);
@@ -32,6 +34,7 @@ public class PersonViewActivity extends AppCompatActivity {
         Button deleteButton = (Button) findViewById(R.id.deleteButton);
         Button editButton = (Button) findViewById(R.id.editButton);
 
+        //Fill the fields with the current data
         name.setText("Name: " + p.getName());
         date.setText("Date: " + p.getDate());
         neck.setText("Neck: " + p.getNeck());
@@ -42,6 +45,7 @@ public class PersonViewActivity extends AppCompatActivity {
         inseam.setText("Inseam: " + p.getInseam());
         comment.setText("Comment: " + p.getComment());
 
+        //Listeners for Edit/Delete/Return to Main
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(PersonViewActivity.this, MainActivity.class);

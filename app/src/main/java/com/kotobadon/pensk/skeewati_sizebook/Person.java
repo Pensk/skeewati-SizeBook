@@ -9,6 +9,7 @@ import java.util.Locale;
  * Created by pensk on 2017/02/02.
  */
 
+//Person holds the individual data of a record.
 public class Person {
     private String name; // (textual)
     private Date date; // (when the dimensions were reasonably valid, in yyyy-mm-dd format)
@@ -20,17 +21,7 @@ public class Person {
     private float inseam; // (length in inches, numeric)
     private String comment; // (textual)
 
-    public Person(String name, Date date, float neck, float bust, float chest, float waist, float hip, float inseam, String comment) {
-        this.name = name;
-        this.date = date;
-        this.neck = neck;
-        this.bust = bust;
-        this.chest = chest;
-        this.waist = waist;
-        this.hip = hip;
-        this.inseam = inseam;
-        this.comment = comment;
-    }
+    //Getters and Setters for the information.
 
     public Person(String name){
         this.name = name;
@@ -45,38 +36,6 @@ public class Person {
     public float getWaist() { return this.waist; }
 
     public float getInseam() { return this.inseam; }
-
-    public String getBustString() {
-        if (this.bust > 0) {
-            return "bust: " + this.bust + " ";
-        } else {
-            return "";
-        }
-    }
-
-    public String getChestString() {
-        if (this.chest > 0) {
-            return "chest: " + this.chest + " ";
-        } else {
-            return "";
-        }
-    }
-
-    public String getWaistString() {
-        if (this.waist > 0) {
-            return "waist: " + this.waist + " ";
-        } else {
-            return "";
-        }
-    }
-
-    public String getInseamString() {
-        if (this.inseam > 0) {
-            return "inseam: " + this.inseam + " ";
-        } else {
-            return "";
-        }
-    }
 
     public void setBust(float bust){
         this.bust = bust;
@@ -131,5 +90,38 @@ public class Person {
 
     public void setHip(float hip) {
         this.hip = hip;
+    }
+
+    //Format the minimum necessary data for the mainactivity's list
+    public String getBustString() {
+        if (this.bust > 0) {
+            return "bust: " + this.bust + " ";
+        } else {
+            return "";
+        }
+    }
+
+    public String getChestString() {
+        if (this.chest > 0) {
+            return "chest: " + this.chest + " ";
+        } else {
+            return "";
+        }
+    }
+
+    public String getWaistString() {
+        if (this.waist > 0) {
+            return "waist: " + this.waist + " ";
+        } else {
+            return "";
+        }
+    }
+
+    public String getInseamString() {
+        if (this.inseam > 0) {
+            return "inseam: " + this.inseam + " ";
+        } else {
+            return "";
+        }
     }
 }

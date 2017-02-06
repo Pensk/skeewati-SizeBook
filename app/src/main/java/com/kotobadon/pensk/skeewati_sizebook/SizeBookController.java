@@ -10,6 +10,8 @@ import java.util.Locale;
 /**
  * Created by pensk on 2017/02/05.
  */
+
+//Manipulates the information from the user and modifies the model. Formats data from the model for the views.
 public class SizeBookController {
     private SizeBookModel sizeBookModel;
 
@@ -33,6 +35,8 @@ public class SizeBookController {
         sizeBookModel.removePerson(SizeBookApplication.getCurrent());
     }
 
+    //Add and Edit person takes the CharSequence data from TextEdits, and tries to format them into their respective formats.
+    //If formatting fails (invalid or missing data) then the values are set to sensible defaults.
     public void addPerson(CharSequence name, CharSequence date, CharSequence bust, CharSequence neck, CharSequence chest, CharSequence waist, CharSequence hip, CharSequence inseam, CharSequence comment) {
         Person p = new Person(name.toString());
         p.setComment(comment.toString());
@@ -120,6 +124,7 @@ public class SizeBookController {
         return sizeBookModel.getCount();
     }
 
+    //This formats the minimum necessary data for the MainActivity's list.
     public String[] personsToString() {
         ArrayList<Person> persons = sizeBookModel.getPersons();
         String[] people = new String[persons.size()];

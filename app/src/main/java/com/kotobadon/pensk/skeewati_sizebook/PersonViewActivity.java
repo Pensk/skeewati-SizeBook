@@ -20,21 +20,48 @@ public class PersonViewActivity extends AppCompatActivity {
         Person p = SizeBookApplication.getController().getCurrentPerson();
 
         TextView name = (TextView) findViewById(R.id.personName);
+        TextView date = (TextView) findViewById(R.id.personDate);
+        TextView neck = (TextView) findViewById(R.id.personNeck);
         TextView bust = (TextView) findViewById(R.id.personBust);
         TextView chest = (TextView) findViewById(R.id.personChest);
         TextView waist = (TextView) findViewById(R.id.personWaist);
+        TextView hip = (TextView) findViewById(R.id.personHip);
         TextView inseam = (TextView) findViewById(R.id.personInseam);
+        TextView comment = (TextView) findViewById(R.id.personComment);
         Button backButton = (Button) findViewById(R.id.backButton);
+        Button deleteButton = (Button) findViewById(R.id.deleteButton);
+        Button editButton = (Button) findViewById(R.id.editButton);
 
         name.setText("Name: " + p.getName());
+        date.setText("Date: " + p.getDate());
+        neck.setText("Neck: " + p.getNeck());
         bust.setText("Bust: " + p.getBust());
         chest.setText("Chest: " + p.getChest());
         waist.setText("Waist: " + p.getWaist());
+        hip.setText("Hip: " + p.getHip());
         inseam.setText("Inseam: " + p.getInseam());
+        comment.setText("Comment: " + p.getComment());
 
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(PersonViewActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SizeBookApplication.getController().removeCurrentPerson();
+                Intent intent = new Intent(PersonViewActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonViewActivity.this, EditPersonActivity.class);
                 startActivity(intent);
             }
         });

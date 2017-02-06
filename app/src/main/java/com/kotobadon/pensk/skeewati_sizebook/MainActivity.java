@@ -22,10 +22,9 @@ public class MainActivity extends AppCompatActivity {
         TextView personCount = (TextView) findViewById(R.id.personCountText);
         Button newButton = (Button) findViewById(R.id.newPerson);
 
-        final SizeBookModel sizeBookModel = SizeBookApplication.getModel();
         final SizeBookController sizeBookController = SizeBookApplication.getController();
 
-        personCount.setText(sizeBookModel.getCount());
+        personCount.setText("Records: " + sizeBookController.getCount());
 
         personList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sizeBookController.setCurrentId(-1);
-                Intent intent = new Intent(MainActivity.this, NewPersonActivity.class);
+                Intent intent = new Intent(MainActivity.this, EditPersonActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,10 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        // TODO Auto-generated method stub
         super.onStart();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.person_item, SizeBookApplication.getModel().personsToString());
+                R.layout.person_item, SizeBookApplication.getController().personsToString());
         personList.setAdapter(adapter);
     }
 }

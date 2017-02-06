@@ -17,7 +17,7 @@ public class PersonViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_view);
 
-        Intent intent = getIntent();
+        Person p = SizeBookApplication.getController().getCurrentPerson();
 
         TextView name = (TextView) findViewById(R.id.personName);
         TextView bust = (TextView) findViewById(R.id.personBust);
@@ -26,11 +26,11 @@ public class PersonViewActivity extends AppCompatActivity {
         TextView inseam = (TextView) findViewById(R.id.personInseam);
         Button backButton = (Button) findViewById(R.id.backButton);
 
-        name.setText("Name: " + intent.getStringExtra("name"));
-        bust.setText("Bust: " + intent.getFloatExtra("bust", 0));
-        chest.setText("Chest: " + intent.getFloatExtra("chest", 0));
-        waist.setText("Waist: " + intent.getFloatExtra("waist", 0));
-        inseam.setText("Inseam: " + intent.getFloatExtra("inseam", 0));
+        name.setText("Name: " + p.getName());
+        bust.setText("Bust: " + p.getBust());
+        chest.setText("Chest: " + p.getChest());
+        waist.setText("Waist: " + p.getWaist());
+        inseam.setText("Inseam: " + p.getInseam());
 
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {

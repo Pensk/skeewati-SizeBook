@@ -6,4 +6,6 @@
     <string name="back">Back</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="name">Name: </string>
+    <string name="bust">Bust: </string>
 </resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_person"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.kotobadon.pensk.skeewati_sizebook.EditPersonActivity">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+
+        <TextView
+            android:id="@+id/personName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/nameEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date" />
+
+        <EditText
+            android:id="@+id/dateEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personNeck"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/neck" />
+
+        <EditText
+            android:id="@+id/neckEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personBust"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bust" />
+
+        <EditText
+            android:id="@+id/bustEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personChest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chest" />
+
+        <EditText
+            android:id="@+id/chestEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personWaist"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/waist" />
+
+        <EditText
+            android:id="@+id/waistEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personHip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hip" />
+
+        <EditText
+            android:id="@+id/hipEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personInseam"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/inseam" />
+
+        <EditText
+            android:id="@+id/inseamEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/personComment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comment" />
+
+        <EditText
+            android:id="@+id/commentEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

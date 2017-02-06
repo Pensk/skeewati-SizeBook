@@ -3,6 +3,7 @@
     package="com.kotobadon.pensk.skeewati_sizebook">
 
     <application
+        android:name=".SizeBookApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,8 +18,12 @@
         </activity>
         <activity
             android:name=".PersonViewActivity"
-            android:label="@string/title_activity_person_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".EditPersonActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

@@ -10,15 +10,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-
-    private ArrayList<Person> persons;
-    private ListView personList;
-    private TextView personCount;
-    private Button newPerson;
-
+    ListView personList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,42 +19,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         personList = (ListView) findViewById(R.id.personList);
-        personCount = (TextView) findViewById(R.id.personCountText);
+        TextView personCount = (TextView) findViewById(R.id.personCountText);
+        Button newButton = (Button) findViewById(R.id.newPerson);
 
-        persons = new ArrayList<Person>();
+        final SizeBookController sizeBookController = SizeBookApplication.getController();
 
-
-        Person person1 = new Person("Boi");
-        person1.setWaist(5f);
-        person1.setBust(2f);
-        persons.add(person1);
-        persons.add(new Person("Boi 2"));
-
-        personCount.setText(String.valueOf(persons.size()));
+        personCount.setText("Records: " + sizeBookController.getCount());
 
         personList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Person p = persons.get(position);
+                sizeBookController.setCurrentId(position);
                 Intent intent = new Intent(MainActivity.this, PersonViewActivity.class);
-                intent.putExtra("name", p.getName());
-                intent.putExtra("bust", p.getBust());
-                intent.putExtra("chest", p.getChest());
-                intent.putExtra("waist", p.getWaist());
-                intent.putExtra("inseam", p.getInseam());
                 startActivity(intent);
             }
         });
 
-
+        newButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sizeBookController.setCurrentId(-1);
+                Intent intent = new Intent(MainActivity.this, EditPersonActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
-        // TODO Auto-generated method stub
         super.onStart();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.person_item, SizeBookApplication.getModel().personsToString());
+                R.layout.person_item, SizeBookApplication.getController().personsToString());
         personList.setAdapter(adapter);
     }
 }

@@ -4,6 +4,16 @@
     <string name="new_person">New Entry</string>
     <string name="title_activity_person_view">PersonViewActivity</string>
     <string name="back">Back</string>
+    <string name="submit">Submit</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="name">Name: (Must not be blank)</string>
+    <string name="bust">Bust: (Numerical)</string>
+    <string name="date">Date: (YYYY-MM-DD)</string>
+    <string name="neck">Neck: (Numerical)</string>
+    <string name="chest">Chest: (Numerical)</string>
+    <string name="waist">Waist: (Numerical)</string>
+    <string name="inseam">Inseam: (Numerical)</string>
+    <string name="hip">Hip: (Numerical)</string>
+    <string name="comment">Comment: </string>
 </resources>

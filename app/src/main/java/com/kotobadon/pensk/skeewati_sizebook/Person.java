@@ -1,6 +1,9 @@
 package com.kotobadon.pensk.skeewati_sizebook;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by pensk on 2017/02/02.
@@ -45,7 +48,7 @@ public class Person {
 
     public String getBustString() {
         if (this.bust > 0) {
-            return "bust: " + this.bust;
+            return "bust: " + this.bust + " ";
         } else {
             return "";
         }
@@ -53,7 +56,7 @@ public class Person {
 
     public String getChestString() {
         if (this.chest > 0) {
-            return "chest: " + this.chest;
+            return "chest: " + this.chest + " ";
         } else {
             return "";
         }
@@ -61,7 +64,7 @@ public class Person {
 
     public String getWaistString() {
         if (this.waist > 0) {
-            return "waist: " + this.waist;
+            return "waist: " + this.waist + " ";
         } else {
             return "";
         }
@@ -69,7 +72,7 @@ public class Person {
 
     public String getInseamString() {
         if (this.inseam > 0) {
-            return "inseam: " + this.inseam;
+            return "inseam: " + this.inseam + " ";
         } else {
             return "";
         }
@@ -81,5 +84,52 @@ public class Person {
 
     public void setWaist(float waist) {
         this.waist = waist;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setNeck(float neck) {
+        this.neck = neck;
+    }
+
+    public void setChest(float chest) {
+        this.chest = chest;
+    }
+
+    public String getDate() {
+        if(this.date == null){
+            return "n/a";
+        }
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+        return format.format(this.date);
+    }
+
+    public float getNeck() {
+        return neck;
+    }
+
+    public float getHip() {
+        return hip;
+    }
+
+    public String getComment() {
+        if(comment == null){
+            return "";
+        }
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setInseam(float inseam) {
+        this.inseam = inseam;
+    }
+
+    public void setHip(float hip) {
+        this.hip = hip;
     }
 }
